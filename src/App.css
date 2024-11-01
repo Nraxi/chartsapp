@@ -1,0 +1,115 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.top-column {
+  width: 100%;
+  height: 350px;
+  /* Height for the video background */
+  position: relative;
+  /* Position relative for absolute child */
+  overflow: hidden;
+  /* Hide overflow to prevent scrolling */
+  text-align: center;
+  padding: 0;
+  /* Remove padding for the video background */
+}
+
+.star-wars-headline {
+  font-family: 'StarJedi', sans-serif;
+  font-size: 125px;
+  color: #feda4a;
+  text-align: center;
+  animation: shadowChange 8s infinite;
+  position: relative;
+  /* Ensure the text is above the video */
+  z-index: 1;
+  /* Bring the text in front of the video */
+  margin-top: 20px;
+}
+
+@font-face {
+  font-family: 'StarJedi';
+  src: url('./font/Starjedi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes shadowChange {
+  0% {
+    text-shadow: 2px 8px 7px rgba(255, 0, 0, 0.844);
+    /* Red */
+  }
+
+  25% {
+    text-shadow: 2px 8px 7px rgba(0, 255, 0, 0.844);
+    /* Green */
+  }
+
+  50% {
+    text-shadow: 2px 8px 7px rgba(0, 0, 255, 0.844);
+    /* Blue */
+  }
+
+  75% {
+    text-shadow: 2px 8px 7px rgba(255, 255, 0, 0.844);
+    /* Yellow */
+  }
+
+  100% {
+    text-shadow: 2px 8px 7px rgba(255, 0, 0, 0.844);
+    /* Back to Red */
+  }
+}
+
+.flex-grow {
+  background-color: #000000;
+  box-shadow: 0 2px 4px rgba(214, 9, 9, 0.508);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.video-background {
+  position: absolute;
+  /* Position absolute to cover the entire area */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  /* Adjust this if needed */
+  border: none;
+  /* Remove border from iframe */
+  pointer-events: none;
+  /* Allow clicks to pass through */
+  z-index: 0;
+  /* Ensure the video is behind the text */
+  transform: translateY(260px) scale(6.8);
+  /* Zoom in slightly */
+  transform-origin: center;
+  /* Keep the zoom centered */
+}
+
+.bottom-column {
+  padding: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  overflow: hidden;
+  /* Keep this height for bottom-column */
+}
+
+.full-width-image {
+
+ 
+  transform: translateY(280px) scale(1.2);
+
+  /* Adjust this value to see the top of the image */
+}

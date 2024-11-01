@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/chartsapp/static/css/main.d14b6227.css",
+    "main.js": "/chartsapp/static/js/main.355746dd.js",
+    "static/js/453.7d0df95d.chunk.js": "/chartsapp/static/js/453.7d0df95d.chunk.js",
+    "static/media/1080p-star-wars-background-image.jpg": "/chartsapp/static/media/1080p-star-wars-background-image.8fecce2fd1d8333d7a4e.jpg",
+    "static/media/Starjedi.ttf": "/chartsapp/static/media/Starjedi.8d577dc1e1755c4860f3.ttf",
+    "index.html": "/chartsapp/index.html",
+    "main.d14b6227.css.map": "/chartsapp/static/css/main.d14b6227.css.map",
+    "main.355746dd.js.map": "/chartsapp/static/js/main.355746dd.js.map",
+    "453.7d0df95d.chunk.js.map": "/chartsapp/static/js/453.7d0df95d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d14b6227.css",
+    "static/js/main.355746dd.js"
+  ]
+}
