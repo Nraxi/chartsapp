@@ -112,22 +112,34 @@ const renderChart = () => {
             />
           </>
           <Tooltip
-            content={({ active, payload }) => {
-              if (active && payload && payload.length) {
-                return (
-                  <div className="custom-tooltip">
-                    <h4>{payload[0].name}</h4>
-                    {payload.map((entry, index) => (
-                      <p key={`label-${index}`} style={{ color: entry.color }}>
-                        {`${entry.name}: ${typeof entry.value === 'number' ? Math.ceil(entry.value).toString() : "N/A"}`}
-                      </p>
-                    ))}
-                  </div>
-                );
-              }
-              return null;
-            }}
-          />
+  content={({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip">
+          <h4>{payload[0]?.name || "No name"}</h4>
+          {payload.map((entry, index) => {
+            const value = entry.value;
+            const numericValue = Number(value); 
+
+            return (
+              <p key={`label-${index}`} style={{ color: entry.color }}>
+                {`${entry.name}: ${
+                  value !== undefined && value !== null && !isNaN(numericValue)
+                    ? Math.ceil(numericValue).toString()
+                    : "N/A"
+                }`}
+              </p>
+            );
+          })}
+        </div>
+      );
+    }
+    return null;
+  }}
+/>
+
+
+
           <Legend />
           {chartType === "bar" && selectedColumns.slice(1).map((column) => (
             <Bar key={column} dataKey={column} fill={chartConfig[column].color} />
